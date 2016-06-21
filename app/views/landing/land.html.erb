@@ -1,0 +1,26 @@
+<h1>Login page</h1>
+<h2>Log In</h2>
+<form action="/account/login" method="post">
+  <span>User ID:</span><input type="text" name="logUserId" placeholder="User ID"/></br>
+  <span>Password:</span><input type="text" name="logPassword" placeholder="Password"/>
+  <input type="submit" value="Log In"/>
+</form>
+<%= flash[:notice] %>
+<h2>Register</h2>
+<form action="/manager/register" method="post">
+  <input type="text" name="userId" placeholder="User ID"/></br>
+  <input type="text" name="password" placeholder="Password"/>
+  <hr>
+  <input type="text" name="firstName" placeholder="First Name"/></br>
+  <input type="text" name="lastName" placeholder="Last Name"/></br>
+  <input type="text" name="address" placeholder="Address"/></br>
+  <input type="text" name="city" placeholder="City"/></br>
+  <input type="text" name="state" placeholder="State"/></br>
+  <input type="text" name="postalCode" placeholder="Postal Code"/></br>
+  <input type="text" name="country" placeholder="Country"/></br>
+  <input type="text" name="cellPhone" placeholder="Cell Phone"/></br>
+  <input type="text" name="workPhone" placeholder="Work Phone"/></br>
+  <input type="text" name="homePhone" placeholder="Home Phone"/></br>
+  <input type="text" name="email" placeholder="Email"/></br>
+  <input type="submit" value="Register"/>
+</form>

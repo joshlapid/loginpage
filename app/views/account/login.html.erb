@@ -1,0 +1,23 @@
+<h1>Hello <%= @user.user_id %></h1>
+<h2>Registration Info</h2>
+<p>First Name: <%= @user.first_name %></p>
+<p>Last Name: <%= @user.last_name %></p>
+<p>Address: <%= @user.address %></p>
+<p>City: <%= @user.city %></p>
+<p>State: <%= @user.state %></p>
+<p>Postal Code: <%= @user.postal_code %></p>
+<p>Country: <%= @user.country %></p>
+<p>Email: <%= @user.email %></p>
+<% if @user.phones.count > 0 %>
+  <% if !@user.phones.find_by(phone_type: 'Cell').nil?%>
+    <p>Cell Phone: <%= @user.phones.find_by(phone_type: 'Cell').phone_number %></p>
+  <% end %>
+  <% if !@user.phones.find_by(phone_type: 'Work').nil?%>
+    <p>Work Phone: <%= @user.phones.find_by(phone_type: 'Work').phone_number %></p>
+  <% end %>
+  <% if !@user.phones.find_by(phone_type: 'Home').nil?%>
+    <p>Home Phone: <%= @user.phones.find_by(phone_type: 'Home').phone_number %></p>
+  <% end %>
+<% else %>
+  <p>No Phone</p>
+<% end %>
