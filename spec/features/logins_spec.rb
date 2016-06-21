@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "Logins", type: :feature do
-  context 'We are on the login page' do
+  context 'We are on the Login Page' do
     Steps 'Creating a login' do
       When 'I visit the login in page' do
         visit '/'
@@ -27,7 +27,7 @@ RSpec.feature "Logins", type: :feature do
     end
   end
 
-  context 'We are on the login page' do
+  context 'We are on the Login Page' do
     Steps 'submitting a login' do
       When 'I visit the login in page' do
         visit '/'
@@ -133,8 +133,12 @@ RSpec.feature "Logins", type: :feature do
         expect(page).to have_content 'someone@somewhere.com'
         expect(page).to have_content 'Ballerman619'
       end
+      And 'I can log out to the registration page' do
+        click_button 'Log Out'
+        expect(page).to have_content 'You have logged out successfully'
+        expect(page).to have_content 'Login Page'
+      end
       And 'I can go to the root and fail login' do
-        visit '/'
         fill_in :logUserId, with: 'Ballerman619'
         fill_in :logPassword, with: 'peso'
         click_button 'Log In'
@@ -171,7 +175,7 @@ RSpec.feature "Logins", type: :feature do
         click_button 'Register'
       end
       Then 'I should be taken back to the landing page with a message' do
-        expect(page).to have_content 'Login page'
+        expect(page).to have_content 'Login Page'
         expect(page).to have_content 'User ID taken, try another'
       end
     end

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   post 'account/login'
 
+  post 'account/logout'
+
   post 'manager/register'
 
   root 'landing#land'
